@@ -16,7 +16,12 @@
           <label :for="item.name + '_' + i">
             {{ item.name }}
           </label>
-          <input type="number" min="0" v-model="item.quantity" />
+          <input
+            type="number"
+            min="0"
+            v-model.number="item.quantity"
+            class="item_number"
+          />
           <input type="color" v-model="item.color" />
         </li>
       </ul>
@@ -43,5 +48,8 @@ export default {
 }
 .list_arrow-closed {
   transform: rotate(-90deg);
+}
+.item_number {
+  width: 2rem;
 }
 </style>
