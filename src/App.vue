@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <create-list :lists="lists" />
-    <show-list :lists="lists" />
+    <create-list :lists="lists" class="create_list" />
+    <show-list :lists="lists" class="show_list" />
   </div>
 </template>
 
@@ -22,8 +21,9 @@ export default {
             { name: "Item 1", quantity: 10, color: "#E90804", checked: true },
             { name: "Item 2", quantity: 16, color: "#F4F709", checked: true },
             { name: "Item 3", quantity: 40, color: "#148007", checked: true },
-            { name: "Item 1", quantity: 0, color: "#0004FF", checked: false },
+            { name: "Item 4", quantity: 0, color: "#0004FF", checked: false },
           ],
+          itemsShown: true,
           allChecked: false,
           someChecked: true,
         },
@@ -33,8 +33,16 @@ export default {
             { name: "Item 1", quantity: 20, color: "#0BE904", checked: false },
             { name: "Item 2", quantity: 26, color: "#09D6F6", checked: false },
             { name: "Item 3", quantity: 50, color: "#F66309", checked: false },
-            { name: "Item 1", quantity: 0, color: "#4D09F6", checked: false },
+            { name: "Item 4", quantity: 0, color: "#4D09F6", checked: false },
           ],
+          itemsShown: true,
+          allChecked: false,
+          someChecked: false,
+        },
+        {
+          title: "List 3",
+          items: [],
+          itemsShown: true,
           allChecked: false,
           someChecked: false,
         },
@@ -47,5 +55,13 @@ export default {
 
 <style>
 #app {
+  display: flex;
+  flex-wrap: wrap;
+}
+.create_list,
+.show_list {
+  list-style-type: none;
+  width: 45%;
+  border: 1px solid darkblue;
 }
 </style>

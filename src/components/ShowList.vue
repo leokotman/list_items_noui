@@ -30,8 +30,9 @@ export default {
 }
 .item_squares {
   display: flex;
+  flex-wrap: wrap;
   list-style-type: none;
-  column-gap: 5px;
+  gap: 5px;
 }
 .square {
   min-width: 30px;
