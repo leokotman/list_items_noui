@@ -1,17 +1,22 @@
 <template>
   <ul>
-    <li v-for="(list, i) in lists" :key="i">
-      <label>
+    <li v-for="(list, i) in lists" :key="i" class="list">
+      <img
+        src="../assets/img/icons8-expand-arrow-50.png"
+        :class="'list_arrow' + (!list.itemsShown ? ' list_arrow-closed' : '')"
+        @click="list.itemsShown = !list.itemsShown"
+      />
+      <label :for="list.title + '_' + i">
+        <input type="checkbox" :id="list.title + '_' + i" />
         {{ list.title }}
-        <input type="checkbox" />
       </label>
-      <ul>
+      <ul class="items_list" v-show="list.itemsShown">
         <li v-for="(item, i) in list.items" :key="i">
-          <input type="checkbox" :id="item.id" />
-          <label :for="item.id">
+          <input type="checkbox" :id="item.name + '_' + i" />
+          <label :for="item.name + '_' + i">
             {{ item.name }}
           </label>
-          {{ item.quantity }}
+          <input type="number" min="0" v-model="item.quantity" />
           <input type="color" v-model="item.color" />
         </li>
       </ul>
@@ -23,7 +28,20 @@
 export default {
   name: "CreateList",
   props: ["lists"],
+  data() {
+    return {};
+  },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.items_list {
+  list-style-type: none;
+}
+.list_arrow {
+  width: 20px;
+}
+.list_arrow-closed {
+  transform: rotate(-90deg);
+}
+</style>
