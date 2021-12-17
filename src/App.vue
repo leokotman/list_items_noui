@@ -2,14 +2,17 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <create-list :lists="lists" />
+    <show-list :lists="lists" />
   </div>
 </template>
 
 <script>
 import CreateList from "./components/CreateList.vue";
+import ShowList from "./components/ShowList.vue";
+
 export default {
   name: "App",
-  components: { CreateList },
+  components: { CreateList, ShowList },
   data() {
     return {
       lists: [
