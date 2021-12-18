@@ -49,7 +49,18 @@ export default {
       ],
     };
   },
-  methods: {},
+  watch: {
+    lists() {
+      this.lists.forEach((list) => {
+        if (list.allChecked) {
+          list.forEach((item) => {
+            return (item.checked = true);
+          });
+        }
+        console.log("lists watcher worked in App");
+      });
+    },
+  },
 };
 </script>
 
