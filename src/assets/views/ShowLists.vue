@@ -9,6 +9,7 @@
               <div
                 :style="'background-color: ' + item.color + ';'"
                 class="square"
+                v-show="item.checked"
               ></div>
             </li>
           </ul>
@@ -21,6 +22,11 @@
 <script>
 export default {
   props: ["lists"],
+  data() {
+      return {
+
+      }
+  },
 };
 </script>
 
