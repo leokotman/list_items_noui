@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-    <create-list :lists="lists" class="create_list" />
-    <show-list :lists="lists" class="show_list" />
+    <create-lists :lists="lists" class="create_list" />
+    <show-lists :lists="lists" class="show_list" />
   </div>
 </template>
 
 <script>
-import CreateList from "./components/CreateList.vue";
-import ShowList from "./components/ShowList.vue";
+import CreateLists from "./assets/views/CreateLists.vue";
+import ShowLists from "./assets/views/ShowLists.vue";
 
 export default {
   name: "App",
-  components: { CreateList, ShowList },
+  components: { CreateLists, ShowLists },
   data() {
     return {
       lists: [
@@ -48,18 +48,6 @@ export default {
         },
       ],
     };
-  },
-  watch: {
-    lists() {
-      this.lists.forEach((list) => {
-        if (list.allChecked) {
-          list.forEach((item) => {
-            return (item.checked = true);
-          });
-        }
-        console.log("lists watcher worked in App");
-      });
-    },
   },
 };
 </script>
