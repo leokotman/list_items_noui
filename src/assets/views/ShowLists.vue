@@ -10,6 +10,7 @@
                 :style="'background-color: ' + item.color + ';'"
                 class="square"
                 v-show="item.checked"
+                @click="item.quantity--"
               ></div>
             </li>
           </ul>
