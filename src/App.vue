@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <create-lists :lists="lists" class="create_list" />
-    <show-lists :lists="lists" class="show_list" />
+    <create-lists :lists="lists" class="create_lists" />
+    <show-lists :lists="lists" class="show_lists" />
   </div>
 </template>
 
@@ -40,12 +40,12 @@ export default {
         {
           title: "List 3",
           items: [
-            { name: "Item 1", quantity: 2, color: "#0BE904", checked: false },
+            { name: "Item 1", quantity: 2, color: "#e801f9", checked: false },
             { name: "Item 2", quantity: 6, color: "#09D6F6", checked: false },
-            { name: "Item 3", quantity: 5, color: "#F66309", checked: false },
+            { name: "Item 3", quantity: 5, color: "#5cf609", checked: false },
             { name: "Item 4", quantity: 3, color: "#4D09F6", checked: false },
-            { name: "Item 5", quantity: 1, color: "#F66309", checked: false },
-            { name: "Item 6", quantity: 7, color: "#4D09F6", checked: false },
+            { name: "Item 5", quantity: 1, color: "#fff705", checked: false },
+            { name: "Item 6", quantity: 7, color: "#e7e7e7", checked: false },
           ],
           allChecked: false,
           someChecked: false,
@@ -60,11 +60,14 @@ export default {
 #app {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
 }
-.create_list,
-.show_list {
+.create_lists,
+.show_lists {
   list-style-type: none;
   width: 45%;
   border: 1px solid darkblue;
+  box-sizing: border-box;
 }
 </style>

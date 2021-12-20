@@ -31,8 +31,28 @@ export default {
 </script>
 
 <style scoped>
+ul {
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  padding: 0 1rem;
+}
+.list_outcome {
+  margin: 1rem 0 1rem;
+  padding: 0 1rem;
+  border: 1px solid darkblue;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.list_outcome label {
+  font-size: 1.2rem;
+}
 .items_outcome {
   list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  row-gap: .8rem;
 }
 .item_squares {
   display: flex;
@@ -41,7 +61,7 @@ export default {
   gap: 5px;
 }
 .square {
-  min-width: 30px;
-  min-height: 30px;
+  min-width: 1rem;
+  min-height: 1rem;
 }
 </style>

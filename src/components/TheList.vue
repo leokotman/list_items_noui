@@ -29,13 +29,15 @@
           />
           {{ item.name }}
         </label>
-        <input
-          type="number"
-          min="0"
-          v-model.number="item.quantity"
-          class="item_number"
-        />
-        <input type="color" v-model="item.color" />
+        <div class="number_color">
+          <input
+            type="number"
+            min="0"
+            v-model.number="item.quantity"
+            class="item_number"
+          />
+          <input type="color" v-model="item.color" />
+        </div>
       </li>
     </ul>
   </section>
@@ -210,12 +212,30 @@ section {
 .items_list {
   list-style-type: none;
 }
+.items_list li {
+  display: flex;
+  justify-content: space-around;
+}
 .list_arrow {
   width: 20px;
 }
 .list_arrow-closed {
   transform: rotate(-90deg);
 }
+
+.number_color {
+  display: flex;
+  align-items: center;
+}
+.number_color input {
+  background-color: transparent;
+  border: none;
+}
+.number_color input[type="color"] {
+  width: 30px;
+  padding: 0;
+}
+
 .item_number {
   width: 2rem;
 }
