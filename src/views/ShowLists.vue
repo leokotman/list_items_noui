@@ -23,11 +23,6 @@
 <script>
 export default {
   props: ["lists"],
-  data() {
-      return {
-
-      }
-  },
 };
 </script>
 
@@ -39,7 +34,7 @@ ul {
 }
 .list_outcome {
   margin: 1rem 0 1rem;
-  padding: 0 1rem;
+  padding: 0 1rem .5rem;
   border: 1px solid darkblue;
   box-sizing: border-box;
   border-radius: 3px;

@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import CreateLists from "./assets/views/CreateLists.vue";
-import ShowLists from "./assets/views/ShowLists.vue";
+import CreateLists from "./views/CreateLists.vue";
+import ShowLists from "./views/ShowLists.vue";
 
 export default {
   name: "App",

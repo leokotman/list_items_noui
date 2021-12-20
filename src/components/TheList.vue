@@ -55,24 +55,25 @@ export default {
     };
   },
   methods: {
+    // функция отмечает/снимает все элементы
     selectAll() {
       if (this.allChecked) {
         const selected = this.list.items.forEach((item) => {
           return (item.checked = true);
         });
-        console.log("selectAll allChecked worked");
         this.someChecked = false;
         this.selectedItems = selected;
       } else if (this.someChecked) {
-        console.log("selectAll someChecked worked");
+        return;
       } else {
-        // this.allChecked = false;
         this.selectedItems = [];
         this.list.items.forEach((item) => {
           return (item.checked = false);
         });
       }
     },
+
+    // функция отслеживает количество отмеченных элементов
     countCheckedItems() {
       let checkedItemsArr = this.list.items.filter(
         (item) => item.checked == true
@@ -81,16 +82,15 @@ export default {
         checkedItemsArr.length === this.list.items.length &&
         this.list.items.length > 0
       ) {
-        console.log("allChecked = true");
         return (this.allChecked = true);
       } else if (checkedItemsArr.length > 0) {
-        console.log("list.someChecked = true");
         return (this.someChecked = true), (this.allChecked = false);
       } else {
-        console.log("allChecked = false");
         return (this.allChecked = false), (this.someChecked = false);
       }
     },
+
+    // показывать лист открытым, если есть элементы в списке
     countItemsInList() {
       if (this.list.items.length > 0) {
         return (this.itemsShown = true);
@@ -111,6 +111,7 @@ export default {
     },
   },
   watch: {
+    // наблюдение за checkbox всех элементов (вкл/выкл)
     allChecked() {
       this.list.allChecked = !this.list.allChecked;
       this.selectAll();

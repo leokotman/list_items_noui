@@ -7,15 +7,12 @@
 </template>
 
 <script>
-import TheList from "../../components/TheList.vue";
+import TheList from "../components/TheList.vue";
 
 export default {
   components: { TheList },
   name: "CreateLists",
   props: ["lists"],
-  data() {
-    return {};
-  },
 };
 </script>
 
